@@ -1,7 +1,7 @@
 <div class="home">
   <div class="buttons-container">
-    <button [disabled]="!!subscription" class="btn btn-primary" (click)="startStream()">Start Stream</button>
-    <button [disabled]="!subscription" class="btn btn-dark" (click)="stopStream()">Stop Stream</button>
+    <button [disabled]="!!(firstSubscription || secondSubscription || thirdSubscription)" class="btn btn-primary" (click)="startStream()">Start Stream</button>
+    <button [disabled]="!firstSubscription && !secondSubscription && !thirdSubscription" class="btn btn-dark" (click)="stopStream()">Stop Stream</button>
   </div>
   <div class="cards-container">
     <div class="input-stream">
